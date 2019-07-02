@@ -1,4 +1,10 @@
 package ru.sulatskov.weatherapixu.main
 
-class MainPresenter {
+import ru.sulatskov.weatherapixu.base.presenter.BasePresenter
+
+class MainPresenter : BasePresenter<MainContractInterface.View>(), MainContractInterface.Presenter {
+    override fun onWeaterLoaded() {
+
+    }
+
 }

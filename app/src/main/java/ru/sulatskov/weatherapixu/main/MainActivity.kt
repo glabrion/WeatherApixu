@@ -1,13 +1,22 @@
 package ru.sulatskov.weatherapixu.main
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import ru.sulatskov.weatherapixu.R
+import ru.sulatskov.weatherapixu.base.view.BaseActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity(), MainContractInterface.View {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+    private lateinit var presenter: MainContractInterface.Presenter
+
+    override val layoutResId: Int
+        get() = R.layout.activity_main
+
+    override fun init(state: Bundle?) {
+        presenter = MainPresenter()
+        presenter.attach(this)
     }
+
+    override fun loadWeather() {
+    }
+
 }

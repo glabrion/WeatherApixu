@@ -1,5 +1,14 @@
 package ru.sulatskov.weatherapixu.model.network.services
 
+import okhttp3.OkHttpClient
+import retrofit2.Call
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.Query
+import ru.sulatskov.weatherapixu.AppConfig
+import ru.sulatskov.weatherapixu.model.network.dto.WeatherData
+import java.util.*
+
 
 class WeatherService private constructor() {
 
@@ -16,27 +25,16 @@ class WeatherService private constructor() {
 
     }
 
- /*   private var retrofit: ApiLogin = Retrofit.Builder()
-        .baseUrl(AppConfig.GIT_HUB_API_BASE_URL)
+    private var retrofit: ApiWeather = Retrofit.Builder()
+        .baseUrl(AppConfig.APIXU_API_BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
-        .client(OkHttpClient.Builder()
-            .addInterceptor { chain ->
-                val request = chain.request()
-                val newRequest = request
-                    .newBuilder()
-                    .header("Authorization", "Basic c3VsYXRza292MzRhbkBtYWlsLnJ1OlZvbHN1MjAwOCE=")
-                    .header("Content-Type", "application/json")
-                    .build()
-                chain.proceed(newRequest)
-            }
-            .build())
         .build()
-        .create(ApiLogin::class.java)
+        .create(ApiWeather::class.java)
 
 
-    fun login(scopes: Array<String>, note: Int): Call<Response<LoginData>> {
-        return retrofit.login(LoginBody(scopes, note))
+    fun getWeatherByName(q : String, lang : String = Locale.getDefault().language.toLowerCase()): Call<WeatherData> {
+        return retrofit.getWeatherByName(q, lang)
     }
-*/
+
 
 }
