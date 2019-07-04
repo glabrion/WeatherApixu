@@ -6,6 +6,6 @@ data class ConditionData(
 
     @SerializedName("text") var text: String,
     @SerializedName("icon") var icon: String,
-    @SerializedName("code") var code: Int
+    @SerializedName("code") var code: Float
 ) {
 }

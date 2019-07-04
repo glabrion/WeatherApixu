@@ -8,7 +8,7 @@ import ru.sulatskov.weatherapixu.model.network.dto.WeatherData
 
 
 interface ApiWeather {
-    @GET("/current.json")
+    @GET("current.json")
     fun getWeatherByName(
         @Query("q") q : String,
         @Query("lang") lang : String,
