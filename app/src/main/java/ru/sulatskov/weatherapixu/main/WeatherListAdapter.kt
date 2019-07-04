@@ -49,9 +49,9 @@ class WeatherListAdapter() : RecyclerView.Adapter<WeatherListAdapter.ViewHolder>
         fun bind(weather: WeatherItem) {
             val date = format.parse(weather.localtime)
 
-            nameTextView?.text = weather.name
-            timeTextView?.text = formatInTextView.format(date)
-            tempTextView?.text = weather.tempC.toString()
+            nameTextView.text = weather.name
+            timeTextView.text = formatInTextView.format(date)
+            tempTextView.text = weather.tempC.toString()
         }
 
     }
