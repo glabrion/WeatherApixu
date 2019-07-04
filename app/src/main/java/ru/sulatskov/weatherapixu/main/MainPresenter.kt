@@ -15,9 +15,12 @@ class MainPresenter : BasePresenter<MainContractInterface.View>(), MainContractI
         WeatherService.getInstance().getWeatherByName(AppConfig.CITY_LIST[1])
             .enqueue(object : Callback<WeatherData> {
                 override fun onResponse(call: Call<WeatherData>, response: Response<WeatherData>) {
-                    response.body()?.let {
-                        //view?.onWeatherLoaded(it.current)
+                    if (response.body() != null) {
+
                     }
+                    //response.body()?.let {
+                        //view?.onWeatherLoaded(it.current)
+                    //}
 
                 }
 

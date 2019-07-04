@@ -12,6 +12,7 @@ import kotlinx.android.synthetic.main.city_list_item.*
 import kotlinx.android.synthetic.main.fragment_city_list.*
 import kotlinx.android.synthetic.main.fragment_city_list.view.*
 import ru.sulatskov.weatherapixu.R
+import ru.sulatskov.weatherapixu.model.local.CityListSharedPreferences
 import ru.sulatskov.weatherapixu.model.network.dto.CurrentData
 import ru.sulatskov.weatherapixu.model.network.dto.LocationData
 import ru.sulatskov.weatherapixu.model.network.dto.WeatherData
@@ -20,7 +21,6 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class MainFragment : Fragment(), MainContractInterface.View {
-
     private val presenter: MainContractInterface.Presenter =
         MainPresenter()
 
@@ -33,7 +33,9 @@ class MainFragment : Fragment(), MainContractInterface.View {
 
         val view = inflater.inflate(R.layout.fragment_city_list, container, false)
 
+        view.add_city.setOnClickListener {
 
+        }
 
         view.city_list_recycler_view.layoutManager = LinearLayoutManager(view.context)
 
@@ -44,9 +46,12 @@ class MainFragment : Fragment(), MainContractInterface.View {
         return view
     }
 
+
     fun addWeather() {
-        weathers.add(WeatherItem("Volgograd", "2019-07-04 12:53", 23f))
-        weathers.add(WeatherItem("Tumen", "2019-07-04 14:53", 26f))
+
+
+        // weathers.add(WeatherItem("Volgograd", "2019-07-04 12:53", 23f))
+        // weathers.add(WeatherItem("Tumen", "2019-07-04 14:53", 26f))
     }
 
     override fun onWeatherLoaded(response: WeatherData?) {
