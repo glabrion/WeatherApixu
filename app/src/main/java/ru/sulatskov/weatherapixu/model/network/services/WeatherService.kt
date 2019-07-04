@@ -1,10 +1,8 @@
 package ru.sulatskov.weatherapixu.model.network.services
 
-import okhttp3.OkHttpClient
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.Query
 import ru.sulatskov.weatherapixu.AppConfig
 import ru.sulatskov.weatherapixu.model.network.dto.WeatherData
 import java.util.*
