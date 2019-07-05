@@ -8,20 +8,7 @@ import ru.sulatskov.weatherapixu.model.network.dto.WeatherData
 import java.util.*
 
 
-class WeatherService private constructor() {
-
-    companion object {
-
-        private var INSTANCE: WeatherService? = null
-
-        fun getInstance(): WeatherService {
-            if (INSTANCE == null) {
-                INSTANCE = WeatherService()
-            }
-            return INSTANCE!!
-        }
-
-    }
+class WeatherService {
 
     private var retrofit: ApiWeather = Retrofit.Builder()
         .baseUrl(AppConfig.APIXU_API_BASE_URL)
@@ -30,7 +17,7 @@ class WeatherService private constructor() {
         .create(ApiWeather::class.java)
 
 
-    fun getWeatherByName(q : String, lang : String = Locale.getDefault().language.toLowerCase()): Call<WeatherData> {
+    fun getWeatherByName(q: String, lang: String = Locale.getDefault().language.toLowerCase()): Call<WeatherData> {
         return retrofit.getWeatherByName(q, lang)
     }
 

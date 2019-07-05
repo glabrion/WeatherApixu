@@ -2,7 +2,7 @@ package ru.sulatskov.weatherapixu.model.local
 
 import android.content.Context
 
-class CityListSharedPreferences private constructor(context: Context) {
+class CityListSharedPreferences(context: Context) {
 
     private val prefs = context.getSharedPreferences("weather", Context.MODE_PRIVATE)
 

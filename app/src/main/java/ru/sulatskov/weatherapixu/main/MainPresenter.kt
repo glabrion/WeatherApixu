@@ -10,14 +10,14 @@ import ru.sulatskov.weatherapixu.model.network.dto.WeatherData
 import ru.sulatskov.weatherapixu.model.network.dto.WeatherItem
 import ru.sulatskov.weatherapixu.model.network.services.WeatherService
 
-class MainPresenter : BasePresenter<MainContractInterface.View>(), MainContractInterface.Presenter {
+class MainPresenter(
+    private val weatherService: WeatherService,
+    private val preferences: CityListSharedPreferences
+) : BasePresenter<MainContractInterface.View>(), MainContractInterface.Presenter {
+
     override fun attach(v: MainContractInterface.View) {
         super.attach(v)
-
-        //     var cityList = CityListSharedPreferences.getInstance(context!!).getCities()
-
-
-        WeatherService.getInstance().getWeatherByName("Volgograd")
+        weatherService.getWeatherByName("Volgograd")
             .enqueue(object : Callback<WeatherData> {
                 override fun onResponse(call: Call<WeatherData>, response: Response<WeatherData>) {
                     val body = response.body()
