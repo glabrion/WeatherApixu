@@ -3,7 +3,6 @@ package ru.sulatskov.weatherapixu.main
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import ru.sulatskov.weatherapixu.AppConfig
 import ru.sulatskov.weatherapixu.base.presenter.BasePresenter
 import ru.sulatskov.weatherapixu.model.local.CityListSharedPreferences
 import ru.sulatskov.weatherapixu.model.network.dto.WeatherData

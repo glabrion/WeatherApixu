@@ -11,7 +11,7 @@ import ru.sulatskov.weatherapixu.model.network.dto.WeatherItem
 import java.text.SimpleDateFormat
 import java.util.*
 
-class WeatherListAdapter() : RecyclerView.Adapter<WeatherListAdapter.ViewHolder>() {
+class WeatherListAdapter : RecyclerView.Adapter<WeatherListAdapter.ViewHolder>() {
 
     private val weathersDataList = mutableListOf<WeatherItem>()
 
@@ -38,9 +38,9 @@ class WeatherListAdapter() : RecyclerView.Adapter<WeatherListAdapter.ViewHolder>
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
 
-        val nameTextView: TextView = view.name_text_view
-        val tempTextView: TextView = view.temp_C_text_view
-        val timeTextView: TextView = view.time_text_view
+        private val nameTextView: TextView = view.name_text_view
+        private val tempTextView: TextView = view.temp_C_text_view
+        private val timeTextView: TextView = view.time_text_view
 
         var format = SimpleDateFormat("yyyy-MM-dd hh:mm", Locale.getDefault())
         var formatInTextView = SimpleDateFormat("hh:mm", Locale.getDefault())
