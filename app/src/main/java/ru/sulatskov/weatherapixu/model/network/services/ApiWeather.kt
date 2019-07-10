@@ -1,6 +1,6 @@
 package ru.sulatskov.weatherapixu.model.network.services
 
-import retrofit2.Call
+import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query
 import ru.sulatskov.weatherapixu.AppConfig
@@ -14,5 +14,5 @@ interface ApiWeather {
         @Query("lang") lang : String,
         @Query("key") key : String = AppConfig.APIXU_API_KEY
 
-    ): Call<WeatherData>
+    ): Single<WeatherData>
 }
