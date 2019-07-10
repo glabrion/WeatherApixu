@@ -2,6 +2,7 @@ package ru.sulatskov.weatherapixu.main
 
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
+import io.reactivex.subjects.PublishSubject
 import ru.sulatskov.weatherapixu.AppConfig
 import ru.sulatskov.weatherapixu.base.presenter.BasePresenter
 import ru.sulatskov.weatherapixu.model.local.CityListSharedPreferences
@@ -15,7 +16,6 @@ class MainPresenter(
 
     override fun attach(v: MainContractInterface.View) {
         super.attach(v)
-
 
         AppConfig.CITY_LIST.forEach {
             weatherService.getWeatherByName(it)
