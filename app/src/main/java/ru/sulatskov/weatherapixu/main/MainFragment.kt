@@ -7,6 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import io.reactivex.Observable
+import io.reactivex.Scheduler
+import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.fragment_city_list.view.*
 import org.koin.android.ext.android.inject
 import ru.sulatskov.weatherapixu.R
@@ -19,6 +22,7 @@ class MainFragment : Fragment(), MainContractInterface.View {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         presenter.attach(this)
+
         val view = inflater.inflate(R.layout.fragment_city_list, container, false)
 
         view.city_list_recycler_view.layoutManager = LinearLayoutManager(view.context)

@@ -18,6 +18,7 @@ class WeatherService {
 
 
     fun getWeatherByName(q: String, lang: String = Locale.getDefault().language.toLowerCase()): Call<WeatherData> {
+
         return retrofit.getWeatherByName(q, lang)
     }
 
