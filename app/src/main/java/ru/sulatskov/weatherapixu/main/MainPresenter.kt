@@ -1,8 +1,8 @@
 package ru.sulatskov.weatherapixu.main
 
+
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import io.reactivex.subjects.PublishSubject
 import ru.sulatskov.weatherapixu.AppConfig
 import ru.sulatskov.weatherapixu.base.presenter.BasePresenter
 import ru.sulatskov.weatherapixu.model.local.CityListSharedPreferences
@@ -21,9 +21,10 @@ class MainPresenter(
             weatherService.getWeatherByName(it)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-
                 .subscribe { response, error ->
-                    if (response != null) {
+                    if (error != null) {
+                        view?.showError()
+                    } else if (response != null) {
                         view?.showWeatherItem(
                             WeatherItem(
                                 response.location.name,
