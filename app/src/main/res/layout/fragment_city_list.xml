@@ -13,15 +13,5 @@
 
     </android.support.v7.widget.RecyclerView>
 
-    <ImageView
-            android:id="@+id/add_city"
-            android:padding="4dp"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/ic_add"
-            android:layout_gravity="end|bottom"
-            android:layout_margin="16dp"
-
-    />
 
 </FrameLayout>

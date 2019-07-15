@@ -42,8 +42,8 @@ class WeatherListAdapter : RecyclerView.Adapter<WeatherListAdapter.ViewHolder>()
         private val tempTextView: TextView = view.temp_C_text_view
         private val timeTextView: TextView = view.time_text_view
 
-        var format = SimpleDateFormat("yyyy-MM-dd hh:mm", Locale.getDefault())
-        var formatInTextView = SimpleDateFormat("hh:mm", Locale.getDefault())
+        private var format = SimpleDateFormat("yyyy-MM-dd hh:mm", Locale.getDefault())
+        private var formatInTextView = SimpleDateFormat("hh:mm", Locale.getDefault())
 
 
         fun bind(weather: WeatherItem) {
