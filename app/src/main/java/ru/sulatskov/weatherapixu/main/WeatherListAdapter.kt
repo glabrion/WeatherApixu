@@ -45,7 +45,6 @@ class WeatherListAdapter : RecyclerView.Adapter<WeatherListAdapter.ViewHolder>()
         private var format = SimpleDateFormat("yyyy-MM-dd hh:mm", Locale.getDefault())
         private var formatInTextView = SimpleDateFormat("hh:mm", Locale.getDefault())
 
-
         fun bind(weather: WeatherItem) {
             val date = format.parse(weather.localtime)
 
