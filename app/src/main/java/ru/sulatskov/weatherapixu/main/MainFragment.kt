@@ -21,6 +21,7 @@ class MainFragment : Fragment(), MainContractInterface.View {
     private val weatherListAdapter = WeatherListAdapter()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+
         presenter.attach(this)
 
         val view = inflater.inflate(R.layout.fragment_city_list, container, false)

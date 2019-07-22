@@ -51,7 +51,8 @@ class WeatherListAdapter : RecyclerView.Adapter<WeatherListAdapter.ViewHolder>()
 
             nameTextView.text = weather.name
             timeTextView.text = formatInTextView.format(date)
-            tempTextView.text = weather.tempC.toString()
+            val tempC = weather.tempC.toString()
+            tempTextView.text = "$tempC °C "
         }
 
     }
