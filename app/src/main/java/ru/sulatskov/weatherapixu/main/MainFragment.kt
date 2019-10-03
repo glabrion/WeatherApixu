@@ -28,6 +28,7 @@ class MainFragment : Fragment(), MainContractInterface.View {
 
         view.city_list_recycler_view.layoutManager = LinearLayoutManager(view.context)
         view.city_list_recycler_view.adapter = weatherListAdapter
+        view.city_list_recycler_view.addItemDecoration(SimpleDividerItemDecoration(context))
 
         return view
     }
