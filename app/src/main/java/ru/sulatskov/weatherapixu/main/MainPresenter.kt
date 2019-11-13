@@ -19,7 +19,7 @@ class MainPresenter(
         AppConfig.CITY_LIST.forEach {
             weatherService.getWeatherByName(it)
                 .map { weatherData: WeatherData ->
-                    WeatherItem(weatherData.location.name, weatherData.location.localtime, weatherData.current.tempC)
+                    WeatherItem(weatherData.location.name, weatherData.location.localtime, weatherData.current.temperature)
                 }
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

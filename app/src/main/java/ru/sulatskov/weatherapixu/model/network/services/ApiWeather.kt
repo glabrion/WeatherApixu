@@ -8,11 +8,16 @@ import ru.sulatskov.weatherapixu.model.network.dto.WeatherData
 
 
 interface ApiWeather {
-    @GET("current.json")
+    @GET("current")
     fun getWeatherByName(
-        @Query("q") q : String,
-        @Query("lang") lang : String,
-        @Query("key") key : String = AppConfig.APIXU_API_KEY
+        @Query("access_key")
+        key : String = AppConfig.APIXU_API_KEY,
+
+        @Query("query")
+        query : String,
+
+        @Query("lang")
+        lang : String
 
     ): Single<WeatherData>
 }

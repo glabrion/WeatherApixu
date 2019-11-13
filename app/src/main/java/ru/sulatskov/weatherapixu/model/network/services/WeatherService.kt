@@ -21,7 +21,7 @@ class WeatherService {
 
     fun getWeatherByName(q: String, lang: String = Locale.getDefault().language.toLowerCase()): Single<WeatherData> {
 
-        return retrofit.getWeatherByName(q, lang)
+        return retrofit.getWeatherByName(query = q, lang = lang)
     }
 
 

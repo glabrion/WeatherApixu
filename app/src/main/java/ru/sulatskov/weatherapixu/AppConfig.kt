@@ -3,8 +3,8 @@ package ru.sulatskov.weatherapixu
 class AppConfig {
 
     companion object {
-        val APIXU_API_BASE_URL = "http://api.apixu.com/v1/"
-        val APIXU_API_KEY = "60fcdb2a3fb84b57940124211190107"
-        val CITY_LIST = listOf<String>("Volgograd", "Moscow", "Krasnodar", "Sankt-Peterburg", "Rostov-Na-Donu")
+        val APIXU_API_BASE_URL = "http://api.weatherstack.com/"
+        val APIXU_API_KEY = "d83eab7e16ec350e3d88560226166182"
+        val CITY_LIST = listOf("Volgograd", "Moscow", "Krasnodar", "Sankt-Peterburg", "Rostov-Na-Donu")
     }
 }
