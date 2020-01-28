@@ -9,7 +9,7 @@ open class AppApplication() : Application() {
         super.onCreate()
 
         startKoin {
-            modules(mainModule(applicationContext))
+            modules(mainModule())
         }
 
     }

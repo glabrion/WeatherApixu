@@ -7,7 +7,7 @@ import ru.sulatskov.weatherapixu.main.MainContractInterface
 import ru.sulatskov.weatherapixu.main.MainPresenter
 import ru.sulatskov.weatherapixu.model.network.services.WeatherService
 
-fun mainModule(context: Context) = module {
+fun mainModule() = module {
 
     single { WeatherService() }
 
