@@ -11,9 +11,7 @@ class MainActivity : BaseActivity() {
         get() = R.layout.activity_main
 
     override fun init(state: Bundle?) {
-        if (supportFragmentManager.backStackEntryCount == 0) {
-            openGeneralFragment()
-        }
+        openGeneralFragment()
     }
 
     fun openGeneralFragment() {
