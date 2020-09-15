@@ -13,20 +13,28 @@ class MainPresenter(
     private val weatherService: WeatherService
 ) : BasePresenter<MainContractInterface.View>(), MainContractInterface.Presenter {
 
-    override fun attach(v: MainContractInterface.View) {
-        super.attach(v)
+    override fun attach(view: MainContractInterface.View) {
+        super.attach(view)
+        loadData()
+    }
 
+    private fun loadData() {
         AppConfig.CITY_LIST.forEach {
             weatherService.getWeatherByName(it)
                 .map { weatherData: WeatherData ->
-                    WeatherItem(weatherData.location.name, weatherData.location.localtime, weatherData.current.temperature)
+                    WeatherItem(
+                        weatherData.location.name,
+                        weatherData.location.localtime,
+                        weatherData.current.temperature
+                    )
                 }
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe { weatherItem, error ->
-                    if (error != null) {
+                    error?.let {
                         view?.showError()
-                    } else if (weatherItem != null) {
+                    }
+                    weatherItem?.let {
                         view?.showWeatherItem(weatherItem)
                     }
                 }

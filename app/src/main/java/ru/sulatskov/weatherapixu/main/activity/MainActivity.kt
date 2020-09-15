@@ -7,12 +7,18 @@ import ru.sulatskov.weatherapixu.main.MainFragment
 
 class MainActivity : BaseActivity() {
 
-
     override val layoutResId: Int
         get() = R.layout.activity_main
 
     override fun init(state: Bundle?) {
-        supportFragmentManager.beginTransaction().add(R.id.main_fragment_container,
+        if (supportFragmentManager.backStackEntryCount == 0) {
+            openGeneralFragment()
+        }
+    }
+
+    fun openGeneralFragment() {
+        supportFragmentManager.beginTransaction().replace(
+            R.id.main_fragment_container,
             MainFragment()
         ).commit()
     }

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">WeatherApixu</string>
+    <string name="error_text">Ошибка загрузки данных</string>
+    <string name="temp">%s°C</string>
 </resources>

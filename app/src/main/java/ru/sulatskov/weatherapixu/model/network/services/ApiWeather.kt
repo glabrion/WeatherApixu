@@ -11,13 +11,10 @@ interface ApiWeather {
     @GET("current")
     fun getWeatherByName(
         @Query("access_key")
-        key : String = AppConfig.APIXU_API_KEY,
-
+        key: String = AppConfig.APIXU_API_KEY,
         @Query("query")
-        query : String,
-
+        query: String,
         @Query("lang")
-        lang : String
-
+        lang: String
     ): Single<WeatherData>
 }

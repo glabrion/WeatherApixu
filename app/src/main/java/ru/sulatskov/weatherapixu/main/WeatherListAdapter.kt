@@ -3,11 +3,11 @@ package ru.sulatskov.weatherapixu.main
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.drawable.Drawable
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.city_list_item.view.*
 import ru.sulatskov.weatherapixu.R
 import ru.sulatskov.weatherapixu.model.network.dto.WeatherItem
@@ -54,18 +54,14 @@ class WeatherListAdapter : RecyclerView.Adapter<WeatherListAdapter.ViewHolder>()
             nameTextView.text = weather.name
             timeTextView.text = formatInTextView.format(date)
             val tempC = weather.tempC.toString()
-            tempTextView.text = "$tempC°C "
+            tempTextView.text = String.format(itemView.context.getString(R.string.temp), tempC)
         }
 
     }
 }
 
-class SimpleDividerItemDecoration(context: Context?) : RecyclerView.ItemDecoration() {
-    private val mDivider: Drawable
-
-    init {
-        mDivider = context!!.getDrawable( R.drawable.items_divider)
-    }
+class SimpleDividerItemDecoration(context: Context) : RecyclerView.ItemDecoration() {
+    private val mDivider: Drawable = context?.getDrawable( R.drawable.items_divider)
 
     override fun onDrawOver(c: Canvas, parent: RecyclerView, state: RecyclerView.State) {
         val left = parent.paddingLeft
