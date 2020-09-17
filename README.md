@@ -2,4 +2,4 @@
 App displays the weather
 
 stack:
-MVP + rxJava
+MVP + rxJava + Retrofit2 + Koin
