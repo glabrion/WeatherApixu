@@ -1,4 +1,4 @@
-package ru.sulatskov.weatherapixu.main
+package ru.sulatskov.weatherapixu.main.screens.main
 
 
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -18,7 +18,7 @@ class MainPresenter(
         loadData()
     }
 
-    private fun loadData() {
+    override fun loadData() {
         AppConfig.CITY_LIST.forEach {
             weatherService.getWeatherByName(it)
                 .map { weatherData: WeatherData ->

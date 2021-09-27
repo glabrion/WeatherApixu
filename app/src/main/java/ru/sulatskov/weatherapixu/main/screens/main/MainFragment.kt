@@ -1,4 +1,4 @@
-package ru.sulatskov.weatherapixu.main
+package ru.sulatskov.weatherapixu.main.screens.main
 
 import android.os.Bundle
 import android.view.LayoutInflater

@@ -1,4 +1,4 @@
-package ru.sulatskov.weatherapixu.main
+package ru.sulatskov.weatherapixu.main.screens.main
 
 import ru.sulatskov.weatherapixu.base.presenter.BasePresenterInterface
 import ru.sulatskov.weatherapixu.base.view.BaseViewInterface
@@ -10,5 +10,7 @@ interface MainContractInterface {
         fun showWeatherItem(weatherItem: WeatherItem)
     }
 
-    interface Presenter : BasePresenterInterface<View>
+    interface Presenter : BasePresenterInterface<View>{
+        fun loadData()
+    }
 }

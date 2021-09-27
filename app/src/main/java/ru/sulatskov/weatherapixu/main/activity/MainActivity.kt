@@ -3,7 +3,7 @@ package ru.sulatskov.weatherapixu.main.activity
 import android.os.Bundle
 import ru.sulatskov.weatherapixu.R
 import ru.sulatskov.weatherapixu.base.view.BaseActivity
-import ru.sulatskov.weatherapixu.main.MainFragment
+import ru.sulatskov.weatherapixu.main.screens.main.MainFragment
 
 class MainActivity : BaseActivity() {
 
